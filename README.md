@@ -75,3 +75,4 @@ An image of the full JSON-formatted database is shown in the following image:
 
 * **Anja Nilsson** 
 * **Marija Dolgova** 
+* **Gabriela Petrila** 
