@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">P9</string>
+    <string name="title_activity_bomb_squad">BombSquad</string>
+    <string name="start_game">START GAME</string>
+    <string name="enter_gamecode">Enter Gamecode</string>
+    <string name="start">START</string>
+</resources>

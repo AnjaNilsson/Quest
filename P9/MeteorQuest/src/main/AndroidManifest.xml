@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.sandy.quest">
+
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.flash" />
+
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <meta-data
+        android:name="com.google.android.gms.version"
+        android:value="@integer/google_play_services_version" />
+
+    <application
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/ic_launcher"
+        android:label="SANDY"
+        android:largeHeap="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.example.sandy.quest.SignIn"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="com.example.sandy.quest.PlayerRole"
+            android:screenOrientation="portrait">
+        </activity>
+        <activity
+            android:name="com.example.sandy.quest.MainActivity"
+            android:screenOrientation="portrait" />
+
+        <service android:name="com.example.sandy.quest.Other.GeofenceTransitionService" />
+        <service android:name="com.example.sandy.quest.Other.Accelerometer" />
+        <service android:name="com.example.sandy.quest.NavigationMethod.Flashlight" />
+
+
+        <activity android:name=".Minigames.TiltGameStart" />
+        <activity android:name=".Minigames.TiltGameRight" />
+        <activity android:name=".Minigames.TiltGameLeft" />
+
+        <activity
+            android:name=".Minigames.MazeMe"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.example.sandy.quest.Minigames.ChargeUp"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name="com.example.sandy.quest.Other.GameScreen"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.example.sandy.quest.Other.Victory" />
+        <activity android:name="com.example.sandy.quest.NavigationMethod.NavigationActivity" />
+
+        <service
+            android:name="com.example.sandy.quest.NavigationMethod.UserLocation"
+            android:enabled="true"
+            android:exported="true" />
+
+        <activity android:name="com.example.sandy.quest.Other.GameIntro" />
+        <activity android:name="com.example.sandy.quest.Minigames.SoundBite" />
+        <activity android:name="com.example.sandy.quest.Other.Introduction" />
+        <activity android:name="com.example.sandy.quest.Other.Ready2StartGame" />
+        <activity android:name="com.example.sandy.quest.Other.GameCompleted"></activity>
+    </application>
+
+</manifest>
