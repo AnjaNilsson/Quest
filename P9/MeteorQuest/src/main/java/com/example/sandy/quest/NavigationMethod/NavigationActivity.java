@@ -160,6 +160,13 @@ public class NavigationActivity extends AppCompatActivity {
                             startActivity(intent);
                         }
 
+                        if(key.equals("minigame5")){
+                            Navigation.gameRunning = true;
+                            Intent intent = new Intent(NavigationActivity.this, GameIntro.class);
+                            intent.putExtra("GAME","5");
+                            startActivity(intent);
+                        }
+
                         break;
 
                     }

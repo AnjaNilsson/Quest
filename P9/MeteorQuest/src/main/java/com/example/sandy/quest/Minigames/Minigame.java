@@ -5,9 +5,6 @@ import android.content.Intent;
 
 
 public class Minigame {
-    /*
-    Set static boolean gameRunning to false and minigameDone 1,2 and 3 to true after each game!!!
-     */
 
 
     public void startGame(String game, Activity activity){
@@ -32,10 +29,10 @@ public class Minigame {
             activity.startActivity(intent);
         }
 
-      /*  if(game.equals("5")) {
+       if(game.equals("5")) {
             Intent intent = new Intent(activity, BalanceGame.class);
             activity.startActivity(intent);
-        }*/
+        }
 
 
 
