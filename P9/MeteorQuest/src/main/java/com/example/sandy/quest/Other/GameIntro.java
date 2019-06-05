@@ -53,7 +53,7 @@ public class GameIntro extends AppCompatActivity {
         SharedPreferences shared = getSharedPreferences("your_file_name", MODE_PRIVATE);
         playerRole = (shared.getString("PLAYERROLE", ""));
         mediaPlayer = new MediaPlayer();
-        if(playerRole.equals("2")||playerRole.equals("3")){
+        if(playerRole.equals("1")||playerRole.equals("2") || playerRole.equals("3")||playerRole.equals("4")){
             background.setOnClickListener(new View.OnClickListener()
             {
                 @Override
@@ -64,7 +64,7 @@ public class GameIntro extends AppCompatActivity {
             });
         }
 
-        callCommunicators();
+        callNavigators();
 
     }
 
@@ -89,21 +89,17 @@ public class GameIntro extends AppCompatActivity {
             startGame.setVisibility(View.VISIBLE);
         }
 
-        if(counterShowButton == 2){
+        if(counterShowButton == 4){
             counterShowButton = 0;
             startGame.setVisibility(View.INVISIBLE);
         }
     }
 
-    public void callCommunicators(){
-        if(playerRole .equals("1") || playerRole .equals("4")) {
+    public void callNavigators() {
+        if (playerRole.equals("1") || playerRole.equals("2") || playerRole.equals("3") || playerRole.equals("4")) {
             txtView.setText("Accept the call");
             mediaPlayer = MediaPlayer.create(this, R.raw.ringtone);
             mediaPlayer.start();
-        }
-        else {
-            txtView.setText("Wait for the communicators to finish their calls");
-            acceptCall.setVisibility(View.INVISIBLE);
         }
     }
 
@@ -116,24 +112,34 @@ public class GameIntro extends AppCompatActivity {
         mediaPlayer.release();
         mediaPlayer = new MediaPlayer();
         try {
-            mediaPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
+            //mediaPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
         }
         catch (Exception e){
             e.printStackTrace();
         }
-        if(playerRole .equals("1") || playerRole .equals("4")){
+        if(playerRole .equals("1") || playerRole .equals("2") || playerRole .equals("3") || playerRole .equals("4")){
             if(game.equals("1")){
-                file = "sound_puzzle";
+                file = "sound_puzzle_intro"; // CORRECT AUDIO FILE
                 whichSoundFile();
             }
             if(game.equals("2")){
                 mediaPlayer.reset();
-                file = "charge_the_battery";
+                file = "charge_the_battery"; // WRONG INTRO AUDIO
                 whichSoundFile();
             }
             if(game.equals("3")){
                 mediaPlayer.reset();
-                file = "treasure_hunt";
+                file = "maze_intro"; // CORRECT AUDIO FILE
+                whichSoundFile();
+            }
+            if(game.equals("4")){
+                mediaPlayer.reset();
+                file = "maze_intro"; // WRONG INTRO AUDIO
+                whichSoundFile();
+            }
+            if(game.equals("5")){
+                mediaPlayer.reset();
+                file = "balance_intro"; // CORRECT AUDIO FILE
                 whichSoundFile();
             }
         }

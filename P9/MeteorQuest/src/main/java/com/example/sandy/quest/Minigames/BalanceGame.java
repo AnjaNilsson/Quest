@@ -3,6 +3,7 @@ package com.example.sandy.quest.Minigames;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.graphics.Point;
 import android.hardware.Sensor;
@@ -23,9 +24,16 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.example.sandy.quest.NavigationMethod.Navigation;
+import com.example.sandy.quest.NavigationMethod.NavigationActivity;
 import com.example.sandy.quest.Other.BallView;
+import com.example.sandy.quest.Other.Database;
 import com.example.sandy.quest.Other.Victory;
 import com.example.sandy.quest.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -49,8 +57,25 @@ public class BalanceGame extends Activity {
     Boolean player1ready, player2ready;
 
 
+    public FirebaseDatabase database;
+    public DatabaseReference rootReference;
+    DatabaseReference playersReadyReference;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        SharedPreferences shared = getSharedPreferences("your_file_name", MODE_PRIVATE);
+        playerRole = (shared.getString("PLAYERROLE", ""));
+
+        String dbPlayerRole = "player" + playerRole +"ready";
+
+        rootReference = Database.getDatabaseRootReference();
+        playersReadyReference = rootReference.child(dbPlayerRole);
+
+
+
+
+
 
         requestWindowFeature(Window.FEATURE_NO_TITLE); //hide title bar
         getWindow().setFlags(0xFFFFFFFF,
@@ -228,6 +253,8 @@ public class BalanceGame extends Activity {
                 mBallView.y = mBallPos.y;
 
 
+
+
                 //redraw ball.
                 RedrawHandler.post(new Runnable() {
                     public void run() {
@@ -240,11 +267,15 @@ public class BalanceGame extends Activity {
                         } else{
                             inside = true;
                         }
+
+
                         if(inside){
+
                             box.setBackgroundResource(R.drawable.rectangle);
                             if(!stateChanged){
                                 timer.start();
                                 stateChanged = true;
+
                             }
                         }
                         if(!inside){
@@ -296,7 +327,13 @@ public class BalanceGame extends Activity {
     }
 
 
-    // TODO add Game Completed screen
+    @Override
+    public void onBackPressed() {
+        // your code.
+        //smAccelerometer.unregisterListener(this);
+        Intent intent = new Intent(BalanceGame.this, NavigationActivity.class);
+        startActivity(intent);
+    }
 
 }
 

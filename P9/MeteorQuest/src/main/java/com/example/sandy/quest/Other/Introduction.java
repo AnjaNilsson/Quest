@@ -113,7 +113,7 @@ public class Introduction extends AppCompatActivity {
                background.setBackgroundColor(Color.WHITE);
                playAgain.setClickable(true);
                playAgain.setVisibility(View.VISIBLE);
-               if(playerRole .equals("2") || playerRole .equals("3")){
+               if(playerRole .equals("1") || playerRole .equals("2") || playerRole .equals("3") || playerRole .equals("4")){
                    navigatorRole();
                }
            }
@@ -127,7 +127,7 @@ public class Introduction extends AppCompatActivity {
     }
 
     public void navigatorRole(){
-        txtView.setText("Wait for the communicators to finish their calls");
+        txtView.setText("touch screen to start game");
         proceedToNav.setVisibility(View.GONE);
         background.setOnClickListener(new View.OnClickListener()
         {
@@ -155,26 +155,14 @@ public class Introduction extends AppCompatActivity {
        mediaPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
        if(playerRoleReady == false) {
            mediaplayerListen();
-           if(playerRole .equals("2") || playerRole .equals("3")){
-               file = "intro_navigators";
-           }
-           else{
-               file = "intro_communicators";
+           if(playerRole .equals("1") || playerRole .equals("2") || playerRole .equals("3") || playerRole .equals("4")){
+               file = "intro_navigation";
            }
             background.setBackgroundColor(Color.BLACK);
             playAgain.setClickable(false);
             playAgain.setVisibility(View.GONE);
             proceedToNav.setVisibility(View.GONE);
-            txtView.setText("Click to hear the message again or go to the next call");
-       }
-       else{
-           background.setBackgroundColor(Color.BLACK);
-           playAgain.setClickable(false);
-           playAgain.setVisibility(View.GONE);
-           mediaplayerListen();
-           if(playerRole .equals("1") || playerRole .equals("4")){
-               file = "after_roles";
-           }
+            txtView.setText("Click to hear the message again or start game");
        }
        whichSoundFile();
        mediaPlayer.start();

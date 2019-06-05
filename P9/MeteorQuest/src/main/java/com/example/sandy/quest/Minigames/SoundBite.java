@@ -207,7 +207,7 @@ public class SoundBite extends AppCompatActivity implements SensorEventListener{
                 }
                 if(playerRole.equals("4")){
                     //set data source to mediaplayer
-                    file = "four";
+                    file = "fourth";
                     callPlayer();
                 }
             }
