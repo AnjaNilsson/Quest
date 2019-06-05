@@ -124,7 +124,7 @@ public class GameIntro extends AppCompatActivity {
             }
             if(game.equals("2")){
                 mediaPlayer.reset();
-                file = "chargebattery"; // WRONG INTRO AUDIO
+                file = "chargebattery"; // CORRECT INTRO AUDIO
                 whichSoundFile();
             }
             if(game.equals("3")){

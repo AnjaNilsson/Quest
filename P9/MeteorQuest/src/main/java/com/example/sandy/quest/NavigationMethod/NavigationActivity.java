@@ -109,16 +109,12 @@ public class NavigationActivity extends AppCompatActivity {
         background = (ConstraintLayout) findViewById(R.id.backgroundActivity);
         text = (TextView) findViewById(R.id.text);
 
-        if(playerRole.equals("1") || playerRole.equals("4")){
-            background.setBackgroundColor(Color.BLACK);
-            text.setText("Wait for the call with your instructions");
-            text.setTextColor(Color.WHITE);
-        }
-
-        else{
+        if(playerRole.equals("1") || playerRole.equals("2") || playerRole.equals("3") || playerRole.equals("4")){
             text.setText("TURN DOWN AND WAIT...");
             text.setTextSize(16);
         }
+
+
 
 
         rootReference = Database.getDatabaseRootReference();
