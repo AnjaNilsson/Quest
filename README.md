@@ -1,5 +1,5 @@
 ## What is Quest?
-MeteorQuest is a prototype of a location-based mobile social game, where the players are guided to a real-world location. As the players are guided to the destination, they are faced with five minigames that they must complete as illustrated in the following figure:
+The Quest is a prototype of a location-based mobile social game, where the players are guided to a real-world location. As the players are guided to the destination, they are faced with five minigames that they must complete as illustrated in the following figure:
 
 ![alt text](gameconcept.png "Illustration of game concept")
 
@@ -73,5 +73,6 @@ An image of the full JSON-formatted database is shown in the following image:
 
 ## Authors
 
-* **Rasmus Rosenqvist** - *Head developer/Jedi* 
-* **Jannik Boldsen** - *Junior developer/padawan* 
+* **Anja Nilsson** 
+* **Marija Dolgova** 
+* **Gabriela Petrila** 
