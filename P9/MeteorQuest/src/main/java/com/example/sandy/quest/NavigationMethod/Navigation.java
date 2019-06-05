@@ -61,7 +61,7 @@ public class Navigation implements SensorEventListener {
         smAccelerometer = (SensorManager) context.getSystemService(SENSOR_SERVICE);
         accelerometer = smAccelerometer.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         // Register sensor listener
-        if(NavigationActivity.playerRole.equals("2") || NavigationActivity.playerRole.equals("3")) {
+        if(NavigationActivity.playerRole.equals("1") || NavigationActivity.playerRole.equals("2") || NavigationActivity.playerRole.equals("3") || NavigationActivity.playerRole.equals("4")) {
             smAccelerometer.registerListener((SensorEventListener) this, accelerometer, SensorManager.SENSOR_DELAY_GAME);
         }
 
@@ -89,7 +89,7 @@ public class Navigation implements SensorEventListener {
 
                                     screenDown = false;
 
-                                    if(NavigationActivity.playerRole.equals("2") || NavigationActivity.playerRole.equals("3")) {
+                                    if(NavigationActivity.playerRole.equals("1") || NavigationActivity.playerRole.equals("2") || NavigationActivity.playerRole.equals("3") || NavigationActivity.playerRole.equals("4")) {
                                         background.setBackgroundColor(Color.BLACK);
                                         Intent intent = new Intent(context, Flashlight.class);
                                         intent.putExtra("DISTANCE", distance);
@@ -104,7 +104,7 @@ public class Navigation implements SensorEventListener {
 
                                     screenDown = true;
                                     background.setBackgroundColor(Color.WHITE);
-                                    screenBrightness.adjustBrightness(distance);
+                                    //screenBrightness.adjustBrightness(distance);
                                 }
                             }
                         } else {
@@ -144,7 +144,7 @@ public class Navigation implements SensorEventListener {
 
         distance = locationA.distanceTo(locationB);
         Log.d("ADebugTag", "Value: " + Float.toString(distance));
-        if(oldDistance != 0.0f && screenDown == true){
+        if(oldDistance != 0.0f ){
             if(oldDistance > distance){
                background.setBackgroundColor(Color.GREEN);
             }

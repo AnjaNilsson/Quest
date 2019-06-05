@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.sandy.quest.NavigationMethod.Navigation;
 import com.example.sandy.quest.NavigationMethod.NavigationActivity;
 import com.example.sandy.quest.Other.Victory;
 import com.example.sandy.quest.R;
@@ -83,6 +84,7 @@ public class MazeMe extends AppCompatActivity implements SensorEventListener {
 //                Intent intent = new Intent(MazeGame.this, Victory.class);
 //                startActivity(intent);
                 if (value == 2) {
+                    Navigation.gameRunning = false;
                     Intent intent = new Intent(MazeMe.this, Victory.class);
                     startActivity(intent);
                 } else {
@@ -129,23 +131,7 @@ public class MazeMe extends AppCompatActivity implements SensorEventListener {
                     e.printStackTrace();
                 }
             }
-            if (playerRole.equals("5")) {
-                try {
-                    background.setVisibility(View.VISIBLE);
-                    background.setImageResource(R.drawable.player5maze);
 
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-            if (playerRole.equals("6")) {
-                try {
-                    background.setVisibility(View.VISIBLE);
-                    background.setImageResource(R.drawable.player6maze);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
         }
         if (magnitude > 90) {
             background.setVisibility(View.GONE);

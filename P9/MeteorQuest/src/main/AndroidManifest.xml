@@ -40,6 +40,9 @@
             </intent-filter>
         </activity>
 
+        <activity android:name="com.example.sandy.quest.Other.Ready2StartGame" />
+        <activity android:name="com.example.sandy.quest.Other.Introduction" />
+
         <activity
             android:name="com.example.sandy.quest.PlayerRole"
             android:screenOrientation="portrait">
@@ -53,19 +56,6 @@
         <service android:name="com.example.sandy.quest.NavigationMethod.Flashlight" />
 
 
-        <activity android:name=".Minigames.TiltGameStart" />
-        <activity android:name=".Minigames.TiltGameRight" />
-        <activity android:name=".Minigames.TiltGameLeft" />
-        <activity android:name=".Minigames.BalanceGame"></activity>
-
-        <activity
-            android:name=".Minigames.MazeMe"
-            android:windowSoftInputMode="stateHidden"
-            android:screenOrientation="portrait"/>
-        <activity
-            android:name="com.example.sandy.quest.Minigames.ChargeUp"
-            android:screenOrientation="portrait" />
-
         <activity
             android:name="com.example.sandy.quest.Other.GameScreen"
             android:screenOrientation="portrait" />
@@ -77,10 +67,21 @@
             android:enabled="true"
             android:exported="true" />
 
+
         <activity android:name="com.example.sandy.quest.Other.GameIntro" />
         <activity android:name="com.example.sandy.quest.Minigames.SoundBite" />
-        <activity android:name="com.example.sandy.quest.Other.Introduction" />
-        <activity android:name="com.example.sandy.quest.Other.Ready2StartGame" />
+        <activity android:name="com.example.sandy.quest.Minigames.TiltGameStart" />
+        <activity android:name="com.example.sandy.quest.Minigames.TiltGameRight" />
+        <activity android:name="com.example.sandy.quest.Minigames.TiltGameLeft" />
+        <activity android:name="com.example.sandy.quest.Minigames.BalanceGame"/>
+
+        <activity
+            android:name="com.example.sandy.quest.Minigames.MazeMe"
+            android:windowSoftInputMode="stateHidden"
+            android:screenOrientation="portrait"/>
+        <activity
+            android:name="com.example.sandy.quest.Minigames.ChargeUp"
+            android:screenOrientation="portrait" />
         <activity android:name="com.example.sandy.quest.Other.GameCompleted"></activity>
     </application>
 

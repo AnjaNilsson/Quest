@@ -11,6 +11,8 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+
+import com.example.sandy.quest.NavigationMethod.Navigation;
 import com.example.sandy.quest.Other.Victory;
 import com.example.sandy.quest.R;
 
@@ -121,6 +123,7 @@ public class TiltGameRight extends AppCompatActivity implements SensorEventListe
             if (currentState == prevState){
                 currentState++;
             } else if(counter>=27) {
+                Navigation.gameRunning = false;
                 Intent intent = new Intent(TiltGameRight.this, Victory.class);
                 startActivity(intent);
             }

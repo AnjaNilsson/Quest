@@ -242,7 +242,7 @@ public class Introduction extends AppCompatActivity {
         calling = false;
         playerRoleReady = true;
 
-        if(calling != true && playerRole .equals("1") || playerRole .equals("4")) {
+        if(calling != true && playerRole .equals("1") || playerRole .equals("2") || playerRole .equals("3") || playerRole .equals("4")) {
             callButton.setVisibility(View.VISIBLE);
             playAgain.setVisibility(View.GONE);
             proceedToNav.setVisibility(View.GONE);

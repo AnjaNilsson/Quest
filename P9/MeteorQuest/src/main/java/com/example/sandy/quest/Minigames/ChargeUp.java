@@ -371,6 +371,7 @@ public class ChargeUp extends AppCompatActivity implements SensorEventListener {
 
 
     public void victory(){
+
         SM.unregisterListener(ChargeUp.this);
         Navigation.minigame1Done = true;
         Navigation.gameRunning = false;
@@ -384,9 +385,7 @@ public class ChargeUp extends AppCompatActivity implements SensorEventListener {
 
     @Override
     public void onBackPressed() {
-        // your code.
-        mediaPlayer.release();
-        mediaPlayer = null;
+
         Intent intent = new Intent(ChargeUp.this, NavigationActivity.class);
         startActivity(intent);
     }
