@@ -31,6 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 
+
 public class SoundBite extends AppCompatActivity implements SensorEventListener{
 
     SensorManager sensorManager;

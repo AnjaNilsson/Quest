@@ -24,11 +24,22 @@
         android:allowBackup="true"
         android:hardwareAccelerated="false"
         android:icon="@mipmap/ic_launcher"
-        android:label="SANDY"
+        android:label="QUEST"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <activity
+            android:name="com.example.sandy.quest.PlayerRole"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <service
+            android:name="com.example.sandy.quest.NavigationMethod.UserLocation"
+            android:exported="true" />
+
+        <activity android:name="com.example.sandy.quest.NavigationMethod.NavigationActivity" />
 
         <activity
             android:name="com.example.sandy.quest.SignIn"
@@ -43,10 +54,7 @@
         <activity android:name="com.example.sandy.quest.Other.Ready2StartGame" />
         <activity android:name="com.example.sandy.quest.Other.Introduction" />
 
-        <activity
-            android:name="com.example.sandy.quest.PlayerRole"
-            android:screenOrientation="portrait">
-        </activity>
+
         <activity
             android:name="com.example.sandy.quest.MainActivity"
             android:screenOrientation="portrait" />
@@ -60,12 +68,9 @@
             android:name="com.example.sandy.quest.Other.GameScreen"
             android:screenOrientation="portrait" />
         <activity android:name="com.example.sandy.quest.Other.Victory" />
-        <activity android:name="com.example.sandy.quest.NavigationMethod.NavigationActivity" />
 
-        <service
-            android:name="com.example.sandy.quest.NavigationMethod.UserLocation"
-            android:enabled="true"
-            android:exported="true" />
+
+
 
 
         <activity android:name="com.example.sandy.quest.Other.GameIntro" />

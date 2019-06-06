@@ -74,9 +74,6 @@ public class BalanceGame extends Activity {
 
 
 
-
-
-
         requestWindowFeature(Window.FEATURE_NO_TITLE); //hide title bar
         getWindow().setFlags(0xFFFFFFFF,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN| WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
@@ -139,7 +136,7 @@ public class BalanceGame extends Activity {
 
         stateChanged = true;
 
-        timer = new CountDownTimer(30000, 1000) {
+        timer = new CountDownTimer(15000, 1000) {
 
             public void onTick(long millisUntilFinished) {
                 mTextField.setText("seconds remaining: " + millisUntilFinished / 1000);
@@ -154,6 +151,7 @@ public class BalanceGame extends Activity {
                     }
                 });
 
+                Navigation.gameRunning = false;
                 final Intent i = new Intent(BalanceGame.this, Victory.class);
                 startActivity(i);
             }

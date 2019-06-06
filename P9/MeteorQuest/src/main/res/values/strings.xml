@@ -4,4 +4,5 @@
     <string name="start_game">START GAME</string>
     <string name="enter_gamecode">Enter Gamecode</string>
     <string name="start">START</string>
+    <string name="game_completed">Game Completed</string>
 </resources>

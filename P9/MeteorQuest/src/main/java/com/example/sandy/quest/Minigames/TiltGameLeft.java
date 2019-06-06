@@ -17,15 +17,12 @@ import com.example.sandy.quest.NavigationMethod.Navigation;
 import com.example.sandy.quest.Other.Victory;
 import com.example.sandy.quest.R;
 
-public class TiltGameLeft extends AppCompatActivity implements SensorEventListener {
+public class TiltGameLeft extends AppCompatActivity implements SensorEventListener{
     private SensorManager smanager;
     private Sensor sensor;
     private ImageView image;
     Integer[] leftImage = new Integer[28];
     int counter = 0, currentState = 1, prevState = 0; //counter and state machine
-    MediaPlayer mp;
-    SoundPool sp;
-    boolean played;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -36,6 +33,7 @@ public class TiltGameLeft extends AppCompatActivity implements SensorEventListen
         this.smanager = (SensorManager)getSystemService(SENSOR_SERVICE);
         this.sensor = smanager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
         image = findViewById(R.id.img);
+
 
     }
 
@@ -51,7 +49,6 @@ public class TiltGameLeft extends AppCompatActivity implements SensorEventListen
         float x = event.values[0];
         float y = event.values[1];
         float z = event.values[2];
-
         leftImage[0] = R.drawable.left_background;
         leftImage[1] = R.drawable.leftside_q1;
         leftImage[2] = R.drawable.leftside_q2;
@@ -81,13 +78,73 @@ public class TiltGameLeft extends AppCompatActivity implements SensorEventListen
         leftImage[26] = R.drawable.leftside_q26;
         leftImage[27] = R.drawable.leftside_done;
 
-        final MediaPlayer mp = MediaPlayer.create(this, R.raw.fart);
-        mp.setOnCompletionListener(new MediaPlayer.OnCompletionListener(){
-            public void onCompletion(MediaPlayer mp){
-                mp.release();
-            }
-        });
 
+        //if back to portrait
+        if(y>= 6)
+        {
+            final Intent i = new Intent(TiltGameLeft.this, TiltGameStart.class);
+            startActivity(i);
+        }
+
+        if (z >= 7){
+            image.setImageResource(R.drawable.android_nope);
+            if (counter < 27 && (currentState != prevState))
+            {
+                counter++;
+                prevState++;
+            }
+        } else if (z <= -7){
+            image.setImageResource(R.drawable.android_yes);
+            if (counter < 27 && (currentState != prevState))
+            {
+                counter++;
+                prevState++;
+            }
+        }else{
+            image.setImageResource(leftImage[counter]);
+            if (currentState == prevState){
+                currentState++;
+            } else if(counter>=27) {
+                Navigation.gameRunning = false;
+                Intent intent = new Intent(TiltGameLeft.this, Victory.class);
+                startActivity(intent);
+            }
+        }
+
+    }
+
+
+    @Override
+    public void onResume()
+    {
+        super.onResume();
+        smanager.registerListener(this, sensor, SensorManager.SENSOR_DELAY_NORMAL);
+    }
+
+    @Override
+    public void onPause()
+    {
+        super.onPause();
+        smanager.unregisterListener(this);
+    }
+
+    @Override
+    public void onWindowFocusChanged(boolean hasFocus) {
+        super.onWindowFocusChanged(hasFocus);
+        if (hasFocus){
+            getWindow().getDecorView().setSystemUiVisibility(
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                            | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                            | View.SYSTEM_UI_FLAG_FULLSCREEN
+                            | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
+        }
+    }
+
+
+}
+/*
 
         //if back to portrait
         if(y> 6)
@@ -177,5 +234,6 @@ public class TiltGameLeft extends AppCompatActivity implements SensorEventListen
                             | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY);
         }
     }
+*/
 
-}
+

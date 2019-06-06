@@ -119,27 +119,27 @@ public class GameIntro extends AppCompatActivity {
         }
         if(playerRole .equals("1") || playerRole .equals("2") || playerRole .equals("3") || playerRole .equals("4")){
             if(game.equals("1")){
-                file = "sound_puzzle_intro"; // CORRECT AUDIO FILE
+                file = "sound_puzzle_intro"; // SoundBite
                 whichSoundFile();
             }
             if(game.equals("2")){
                 mediaPlayer.reset();
-                file = "chargebattery"; // CORRECT INTRO AUDIO
+                file = "balance_intro";  // BalanceGame
                 whichSoundFile();
             }
             if(game.equals("3")){
                 mediaPlayer.reset();
-                file = "maze_intro"; // CORRECT AUDIO FILE
+                file = "maze_intro"; // MazeGame
                 whichSoundFile();
             }
             if(game.equals("4")){
                 mediaPlayer.reset();
-                file = "maze_intro"; // WRONG INTRO AUDIO
+                file = "headtiltintro"; // HeadTilt
                 whichSoundFile();
             }
             if(game.equals("5")){
                 mediaPlayer.reset();
-                file = "balance_intro"; // CORRECT AUDIO FILE
+                file = "chargebattery"; // ChargeUp
                 whichSoundFile();
             }
         }

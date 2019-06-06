@@ -15,7 +15,7 @@ public class Minigame {
         }
 
         if(game.equals("2")) {
-            Intent intent = new Intent(activity, ChargeUp.class);
+            Intent intent = new Intent(activity, BalanceGame.class);
             activity.startActivity(intent);
         }
 
@@ -30,7 +30,7 @@ public class Minigame {
         }
 
        if(game.equals("5")) {
-            Intent intent = new Intent(activity, BalanceGame.class);
+            Intent intent = new Intent(activity, ChargeUp.class);
             activity.startActivity(intent);
         }
 

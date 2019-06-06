@@ -17,14 +17,14 @@ public class GameCompleted extends AppCompatActivity {
         getWindow().getDecorView().setSystemUiVisibility(View.SYSTEM_UI_FLAG_HIDE_NAVIGATION);
         setContentView(R.layout.activity_game_completed);
 
-        mediaPlayer = MediaPlayer.create(this, R.raw.explosion);
+       mediaPlayer = MediaPlayer.create(this, R.raw.tada);
         mediaPlayer.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
 
             @Override
             public void onCompletion(MediaPlayer mp) {
                 mediaPlayer.release();
                 mediaPlayer = null;
-                mediaPlayer = MediaPlayer.create(GameCompleted.this, R.raw.win);
+                //mediaPlayer = MediaPlayer.create(GameCompleted.this, R.raw.win);
                 mediaPlayer.start();
             }
 

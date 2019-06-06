@@ -21,6 +21,7 @@ import android.widget.TextView;
 
 import com.example.sandy.quest.NavigationMethod.Navigation;
 import com.example.sandy.quest.NavigationMethod.NavigationActivity;
+import com.example.sandy.quest.Other.GameCompleted;
 import com.example.sandy.quest.Other.Victory;
 import com.example.sandy.quest.R;
 import com.google.firebase.database.DatabaseReference;
@@ -50,7 +51,7 @@ public class ChargeUp extends AppCompatActivity implements SensorEventListener {
     int length = 0;
     ProgressBar progressBar;
     int secondTime = 0;
-    int drainBattery = 500;
+    int drainBattery = 100;
     public boolean stopHandler = false;
     boolean actionUp = false;
     public FirebaseDatabase database;
@@ -332,7 +333,8 @@ public class ChargeUp extends AppCompatActivity implements SensorEventListener {
 
                     if (progressBar.getProgress() >= 12) {
                         stopHandler = true;
-                        victory();
+                        Intent intent = new Intent(ChargeUp.this, GameCompleted.class);
+                        startActivity(intent);
                     }
 
                     if (counter > 0) {
@@ -367,28 +369,24 @@ public class ChargeUp extends AppCompatActivity implements SensorEventListener {
             }
         }, delay);
 
+
+
     }
 
-
-    public void victory(){
+/*
+    public void victory() {
 
         SM.unregisterListener(ChargeUp.this);
-        Navigation.minigame1Done = true;
-        Navigation.gameRunning = false;
+//        Navigation.minigame1Done = true;
+//        Navigation.gameRunning = false;
         mediaPlayer.release();
         mediaPlayer = null;
-        Intent intent = new Intent(ChargeUp.this, Victory.class);
+        Intent intent = new Intent(ChargeUp.this, GameCompleted.class);
         startActivity(intent);
         chargeBatteryDone = true;
-    }
+    }*/
 
 
-    @Override
-    public void onBackPressed() {
-
-        Intent intent = new Intent(ChargeUp.this, NavigationActivity.class);
-        startActivity(intent);
-    }
 
 
 
