@@ -48,7 +48,7 @@ public class TiltGameStart extends AppCompatActivity implements SensorEventListe
         float z = event.values[2];
 
         //if it's landscape left way <<<
-        if (x >= 7) {
+        if (x >= 8) {
             //TODO create a 4 second timer to give user time before activity starts
             final Intent i = new Intent(TiltGameStart.this, TiltGameLeft.class);
             startActivity(i);

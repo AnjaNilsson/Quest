@@ -95,7 +95,7 @@ public class Introduction extends AppCompatActivity {
            public void onCompletion(MediaPlayer mp) {
                counter ++;
                if(counter >= 2 && playerRoleReady == true){
-                   txtView.setText("Touch the screen to start the game");
+                   txtView.setText("Tap the screen to start game");
                    proceedToNav.setVisibility(View.GONE);
                    background.setOnClickListener(new View.OnClickListener()
                    {
@@ -127,7 +127,7 @@ public class Introduction extends AppCompatActivity {
     }
 
     public void navigatorRole(){
-        txtView.setText("touch screen to start game");
+        txtView.setText("Hear the message again or tap screen to start game");
         proceedToNav.setVisibility(View.GONE);
         background.setOnClickListener(new View.OnClickListener()
         {
@@ -162,7 +162,7 @@ public class Introduction extends AppCompatActivity {
             playAgain.setClickable(false);
             playAgain.setVisibility(View.GONE);
             proceedToNav.setVisibility(View.GONE);
-            txtView.setText("Click to hear the message again or start game");
+            txtView.setText("Accept the call");
        }
        whichSoundFile();
        mediaPlayer.start();

@@ -6,10 +6,10 @@
 
     <TextView
         android:id="@+id/txtView"
-        android:layout_width="wrap_content"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:text=""
-        android:textSize="50dip"
+        android:textSize="50sp"
         android:layout_gravity="center"
         android:textAlignment="center"
         android:paddingBottom="100dp"
@@ -19,8 +19,8 @@
         android:id="@+id/callButton"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:background="@drawable/acceptcall"
         android:layout_gravity="center"
-        android:onClick="playSoundfile"/>
+        android:background="@drawable/acceptcall"
+        android:onClick="playSoundfile" />
 
 </LinearLayout>

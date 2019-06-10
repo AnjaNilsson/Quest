@@ -80,20 +80,20 @@ public class TiltGameLeft extends AppCompatActivity implements SensorEventListen
 
 
         //if back to portrait
-        if(y>= 6)
+        if(y >= 7)
         {
             final Intent i = new Intent(TiltGameLeft.this, TiltGameStart.class);
             startActivity(i);
         }
 
-        if (z >= 7){
+        if (z >= 8){
             image.setImageResource(R.drawable.android_nope);
             if (counter < 27 && (currentState != prevState))
             {
                 counter++;
                 prevState++;
             }
-        } else if (z <= -7){
+        } else if (z <= -8){
             image.setImageResource(R.drawable.android_yes);
             if (counter < 27 && (currentState != prevState))
             {

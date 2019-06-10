@@ -37,7 +37,8 @@
         android:layout_marginTop="175dp"
         android:text="Start minigame"
         android:onClick="startGame"
-
+        android:background="#90B494"
+        android:textColor="@android:color/white"
          />
 
 </RelativeLayout>

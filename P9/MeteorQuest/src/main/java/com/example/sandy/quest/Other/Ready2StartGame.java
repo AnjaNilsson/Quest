@@ -35,7 +35,7 @@ public class Ready2StartGame extends AppCompatActivity {
         setContentView(R.layout.activity_ready2_start_game);
 
         nameTop = (TextView) findViewById(R.id.nameTop);
-        nameBottom = (TextView) findViewById(R.id.nameBottom);
+        nameBottom = (TextView) findViewById(R.id.introduction);
         startGame = (Button) findViewById(R.id.startGame);
 
         rootReference = Database.getDatabaseRootReference();

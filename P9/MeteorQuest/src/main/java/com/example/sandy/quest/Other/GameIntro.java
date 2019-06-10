@@ -112,7 +112,7 @@ public class GameIntro extends AppCompatActivity {
         mediaPlayer.release();
         mediaPlayer = new MediaPlayer();
         try {
-            //mediaPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
+            mediaPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -176,7 +176,7 @@ public class GameIntro extends AppCompatActivity {
                 background.setBackgroundColor(Color.WHITE);
                 acceptCall.setVisibility(View.VISIBLE);
                 txtView.setVisibility(View.VISIBLE);
-                txtView.setText("Play again");
+                txtView.setText("Hear the message again or tap screen to start game");
                 acceptCall.setBackgroundResource(R.drawable.play);
             }
 

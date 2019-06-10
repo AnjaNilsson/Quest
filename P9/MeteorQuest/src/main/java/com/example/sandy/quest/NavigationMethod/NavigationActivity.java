@@ -49,6 +49,8 @@ public class NavigationActivity extends AppCompatActivity {
     private static Activity context = null;
     public ConstraintLayout background;
     public TextView text;
+    public TextView hint1;
+
 
     public ScreenBrightness brightness;
     public Flashlight flashlight;
@@ -108,10 +110,16 @@ public class NavigationActivity extends AppCompatActivity {
 
         background = (ConstraintLayout) findViewById(R.id.backgroundActivity);
         text = (TextView) findViewById(R.id.text);
+        hint1 = (TextView) findViewById(R.id.hint1);
+
+
 
         if(playerRole.equals("1") || playerRole.equals("2") || playerRole.equals("3") || playerRole.equals("4")){
-            text.setText("TURN DOWN AND WAIT...");
+            text.setText("TRY WALKING ABOUT TOGETHER TO WAKE THE GPS...");
             text.setTextSize(16);
+            hint1.setText("HINT: Screen up = flashlight. Screen down = screen color");
+            hint1.setTextSize(10);
+
         }
 
 

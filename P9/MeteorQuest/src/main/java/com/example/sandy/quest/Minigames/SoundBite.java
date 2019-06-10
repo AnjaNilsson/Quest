@@ -63,7 +63,8 @@ public class SoundBite extends AppCompatActivity implements SensorEventListener{
         callButton = (ImageButton)findViewById(R.id.callButton);
         background = (LinearLayout) findViewById(R.id.background);
 
-        txtView.setText("Place phone on metal object");
+        txtView.setText("Place phone on a metal object");
+        txtView.setTextSize(30);
         callButton.setVisibility(View.INVISIBLE);
 
         SharedPreferences shared = getSharedPreferences("your_file_name", MODE_PRIVATE);
@@ -238,7 +239,7 @@ public class SoundBite extends AppCompatActivity implements SensorEventListener{
         mediaPlayer.release();
         mediaPlayer = new MediaPlayer();
         try {
-            mediaPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
+           // mediaPlayer.setAudioStreamType(AudioManager.STREAM_VOICE_CALL);
         }
         catch (Exception e){
             e.printStackTrace();
@@ -263,6 +264,7 @@ public class SoundBite extends AppCompatActivity implements SensorEventListener{
                 talking = false;
                 background.setBackgroundColor(Color.WHITE);
                 txtView.setText("Place phone on metal object");
+                txtView.setTextSize(30);
 
             }
 

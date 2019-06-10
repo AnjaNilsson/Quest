@@ -29,7 +29,7 @@
 
     <EditText
         android:id="@+id/game_code"
-        android:layout_width="220dp"
+        android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
@@ -47,7 +47,7 @@
 
     <Button
         android:id="@+id/start_game"
-        android:layout_width="220dp"
+        android:layout_width="250dp"
         android:layout_height="50dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"

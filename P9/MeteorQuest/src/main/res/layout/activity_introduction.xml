@@ -17,7 +17,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:padding="35dp"
-        android:text="touch the screen to start game"
+        android:text="Tap the screen to start game"
         android:textAlignment="center"
         android:textSize="20dip"
         app:layout_constraintBottom_toTopOf="@+id/callButton"
@@ -58,7 +58,8 @@
         app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtView"
-        app:layout_constraintVertical_bias="0.016" />
+        app:layout_constraintVertical_bias="0.016"
+        />
 
     <Button
         android:id="@+id/proceedToNav"
@@ -93,7 +94,9 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/callButton"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:background="#90B494"
+        android:textColor="@android:color/white"/>
 
 
 
